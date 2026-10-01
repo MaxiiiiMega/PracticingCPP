@@ -4,8 +4,8 @@
 
 #include "Object.h"
 
-void ObjectManager::AddObject(Object& object) {
-    objects.push_back(&object);
+void ObjectManager::AddObject(Object* object) {
+    objects.push_back(object);
 }
 
 void ObjectManager::Update() const {

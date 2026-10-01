@@ -20,7 +20,7 @@ class ObjectManager {
         ObjectManager() = default;
         ~ObjectManager() = default;
 
-        void AddObject(Object& object);
+        void AddObject(Object* object);
         void Update() const;
 };
 

@@ -33,6 +33,7 @@ class Player : public Object {
 
         void playermove();
         void playercontrol();
+        void playerbody();
 };
 
 

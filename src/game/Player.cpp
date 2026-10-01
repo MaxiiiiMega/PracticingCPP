@@ -12,7 +12,9 @@ Vector2 Player::getPosition() const {
     return this->position;
 }
 void Player::Update() {
-    DrawRectangleV(position, {size, size}, color);
+    playercontrol();
+    playermove();
+    playerbody();
 }
 void Player::playermove() {
     Vector2 newPos = position;
@@ -23,6 +25,7 @@ void Player::playermove() {
         case Direction::RIGHT: newPos.x += curspeed; break;
         case Direction::NEUTRAL: newPos.y += 0; break;
     }
+    position = newPos;
 }
 void Player::playercontrol() {
     if (IsKeyDown(KEY_W)) dir = Direction::UP;
@@ -30,4 +33,7 @@ void Player::playercontrol() {
     else if (IsKeyDown(KEY_A)) dir = Direction::LEFT;
     else if (IsKeyDown(KEY_D)) dir = Direction::RIGHT;
     else dir = Direction::NEUTRAL;
+}
+void Player::playerbody() {
+    DrawRectangleV(position, {size, size}, color);
 }
