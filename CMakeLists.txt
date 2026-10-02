@@ -19,6 +19,8 @@ add_executable(PracticingCPP src/main.cpp
         src/Object.h
         src/game/Player.cpp
         src/game/Player.h
+        src/game/Scene.cpp
+        src/game/Scene.h
 )
 
 target_link_libraries(PracticingCPP PRIVATE raylib)
